@@ -12,7 +12,7 @@ int main(int argc, char *argv[]){
 
     std::string cadena;
     cout << "\nMini generador lexico\n\nVelasco Hernandez, Victor Manuel\n\nEscribe la cadena a evaluar: " << endl;
-    cin>> cadena;
+    std::getline(std::cin,cadena);
     Lexico lexico;
     lexico.entrada(cadena);
 

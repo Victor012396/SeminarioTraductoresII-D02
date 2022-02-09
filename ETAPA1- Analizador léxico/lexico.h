@@ -48,10 +48,12 @@ class Lexico{
        char sigCaracter();       
        void sigEstado(int estado);
        void aceptacion(int estado);
+       void aceptacionReservada(int c);
        bool esLetra(char c);
        bool esDigito(char c);
        bool esEspacio(char c);
        void retroceso();
+
               
       public:
        string simbolo;

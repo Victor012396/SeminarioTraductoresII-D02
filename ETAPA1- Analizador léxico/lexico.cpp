@@ -164,38 +164,41 @@ int Lexico::sigSimbolo(){
              else
              if ( c == '$' ) aceptacion(23);
              else
-             if (esEspacio(c)) sigCaracter();
+             if (esEspacio(c)) this->estado=0;
              
              break;
        case 1: 
              if (esDigito(c)){
-              id=0;
+              id=1;
               sigEstado(1);
               }  
              else
              if (esLetra(c)){
 			  sigEstado(1);
-			  if(simbolo == "int"||simbolo=="float"||simbolo=="void") aceptacion(4);
+			  if(simbolo == "int"||simbolo=="float"||simbolo=="void") aceptacionReservada(4);
 	             else
-	             if (simbolo=="if") aceptacion(19);
+	             if (simbolo=="if") aceptacionReservada(19);
 	             else
-	             if (simbolo=="while") aceptacion(20);
+	             if (simbolo=="while") aceptacionReservada(20);
 	             else
-	             if (simbolo=="return") aceptacion(21);
+	             if (simbolo=="return") aceptacionReservada(21);
 	             else
-	             if (simbolo =="else") aceptacion(22);
+	             if (simbolo =="else") aceptacionReservada(22);
 	             //else
-	             //if(!isalpha(simbolo[]))aceptación(3);
+	             //if(!isalpha(simbolo[]))aceptaciï¿½n(3);
 			 }
              else
              
-             if (id==0){
-             retroceso();	
-             this->estado = 0;
-             id=0;
+             if (id==1){
+               retroceso();	
+               this->estado = 0;
+               id=0;
               }
              else{
-              this->estado = 3; }
+              //this->estado = 3; }
+             aceptacionReservada(0);
+             retroceso();
+             }
              break;
        case 2:
              if (esDigito(c)) sigEstado(2);
@@ -216,7 +219,7 @@ int Lexico::sigSimbolo(){
              }  
              break;      
        case 4:
-            if ( c != '=') aceptacion (7);
+            if ( c != '=') aceptacionReservada(7);
             else
             if ( c == '=' ) aceptacion(7);
             break;
@@ -237,12 +240,12 @@ int Lexico::sigSimbolo(){
             }  
             break;
        case 7: 
-            if ( c != '=') aceptacion(10);
+            if ( c != '=') aceptacionReservada(10);
             else
             if ( c == '=') aceptacion(11);
             break;
        case 8: 
-            if ( c != '=') aceptacion(18);
+            if ( c != '=') aceptacionReservada(18);
             else
             if ( c == '=') aceptacion(11);
             break;
@@ -343,6 +346,11 @@ int Lexico::sigSimbolo(){
   void Lexico::aceptacion(int estado){
        sigEstado(estado);
        continua= false;
+  }
+
+    void Lexico::aceptacionReservada(int estado){
+       this->estado=estado;
+       continua=false;
   }
 
   bool Lexico::terminado(){
