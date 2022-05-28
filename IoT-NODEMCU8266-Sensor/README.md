@@ -34,16 +34,16 @@ Además de algunas otras las cuales se mencionan sus comandos de instalación en
 
 ### Desarrollo del Despliegue
 
-#### Placa NodeMCU8266
+#### Placa NodeMCU8266 👨🏻‍💻
 Una vez que instaladas y obtenidas las anteriores herramientas, primeramente se tiene que abrir el IDE de Arduino para cargar el archivo 'NODEMCU2'. En este caso, ArduinoIDLE solicitará hacer la creación de una carpeta, a lo cuál le daremos permiso. Una vez con el código dentro de Arduino, se debe de instalar la libreria que permite el uso de la placa NODEMCU8366, para lo cuál, se sugieren los siguientes pasos:
 
 1. Primeramente ir al repositorio oficial del ESP8266: https://github.com/esp8266/arduino 
 2. Ahi se encuentra el link oficial que le dice a Arduino qué descargar para el uso de NODEMCU8366: https://arduino.esp8266.com/stable/package_esp8266com_index.json
-3. En el IDE de Arduino, abrir 'Archivo>Preferencias' y pegar el link en 'Gestor de URLs Adicionales de Tarjetas: '
+3. En el IDE de Arduino, abrir *'Archivo>Preferencias'* y pegar el link en 'Gestor de URLs Adicionales de Tarjetas: '
 4. Dar click en Ok
 
 Ya con la libreria descargada, conectamos la NODEMCU8266 a uno de los puertos de nuestra máquina, conectando nuestra placa con el IDE de la siguiente forma:
-5. Ir a 'Herramientas>Placa:Arduino/Genuino Uno>Gestor de tarjetas'
+5. Ir a *'Herramientas>Placa:Arduino/Genuino Uno>Gestor de tarjetas'*
 6. En el campo de busqueda poner 'esp8266' y al encontrarlo, instalar dicha librería
 7. Cerrar el Gestor de tarjetas y abrirlo nuevamente
 8. Podemos observar ahora la placa NODEMCU8266, de manera que ahora se debe de dar click en 'Generic ESP8266 Module' (Es la 01) para seleccionarla
@@ -63,13 +63,26 @@ Además, en el siguiente link se explica a mayor detalle cómo se realizó este 
 
 <img src="./EMQX-Broker.png">
 
-#### Broker EMQX
+#### Broker EMQX 📦
 Para poder implementar el Broker, es necesario instalar K3D y K3S, para poder comenzar con el cluster, para lo cuál se usaron los siguientes comandos(esta implementación fue en Windows por medio de PowerShell), recuerda que se debe tener instalado Chocolatey: 
 ```
 CHOCO INSTALL K3D -Y
 CHOCO INSTALL JQ -Y
 CHOCO INSTALL YQ -Y
 CHOCO INSTALL KUBERNETES-HELM -Y
+```
+
+Una vez instalado K3D, se usaran el siguiente comando para crear el clúster con Rancher, en el cuál se expondran los puertos que el despliegue requiera: 
+```
+K3D CLUSTER CREATE --API-PORT 6448 -P
+"18083:18083" -P "1883:1883" -P "8883:8883" -P
+"8081:8081" -P "8083:8083" -P "8084:8084" IOT
+```
+
+Para configurar, la variable de entorno del clúster, se introducira el siguiente comando(exclusivo de PowerShell):
+```
+K3D KUBECONFIG GET IoT > $ENV:KUBECONFIG_FILE
+$ENV:KUBECONFIG=($ENV:KUBECONFIG_FILE)
 ```
 Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
 
