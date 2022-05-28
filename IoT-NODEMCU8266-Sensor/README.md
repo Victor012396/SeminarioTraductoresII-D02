@@ -64,7 +64,13 @@ Además, en el siguiente link se explica a mayor detalle cómo se realizó este 
 <img src="./EMQX-Broker.png">
 
 #### Broker EMQX
-
+Para poder implementar el Broker, es necesario instalar K3D y K3S, para poder comenzar con el cluster, para lo cuál se usaron los siguientes comandos(esta implementación fue en Windows por medio de PowerShell), recuerda que se debe tener instalado Chocolatey: 
+```
+CHOCO INSTALL K3D -Y
+CHOCO INSTALL JQ -Y
+CHOCO INSTALL YQ -Y
+CHOCO INSTALL KUBERNETES-HELM -Y
+```
 Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
 
 1. Entrar a la página emqx.com/en
