@@ -1,4 +1,4 @@
- Mini Análizador Léxico
+### Mini Análizador Léxico
 
 Programa funcionando correctamente al introducir identificadores y números reales.
 Esto funciona primeramente leyendo una cadena de manera que la va dividiendo por tokens, siendo al final donde se imprime el resultado del análisis. Como sabemos, la implementación del analizador léxico es la base de todo compilador. 
