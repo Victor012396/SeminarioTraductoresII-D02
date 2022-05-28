@@ -58,8 +58,10 @@ Ya con la libreria descargada, conectamos la NODEMCU8266 a uno de los puertos de
 Pd. También existe la ESP8285 (Es la 12)
 
 **9.** En herramientas checar los siguientes atributos:
+
    **Flash Size:** Se debe de observar si es 01 o 12, como se mencionó anteriormente
-    **Upload Speed:** Es el nivel de carga del programa, esto depende del valor y carga del puerto y del usb
+   
+   **Upload Speed:** Es el nivel de carga del programa, esto depende del valor y carga del puerto y del usb
     
 **10.** En caso de no poder, orientarse mediante el siguiente url de Youtube, link video: https://www.youtube.com/watch?v=0g7sazWXfEI
 
@@ -94,6 +96,25 @@ Para configurar, la variable de entorno del clúster, se introducira el siguient
 K3D KUBECONFIG GET IoT > $ENV:KUBECONFIG_FILE
 $ENV:KUBECONFIG=($ENV:KUBECONFIG_FILE)
 ```
+Después, al archivo YAML que se encuentra en este repositorio, lo aplicamos al clúster de K3S con el comando, para generar el Deployment y el Service:
+```
+K3S KUBECTL APPLY -F EMQX.YAML
+```
+
+Es importante recordar que los puertos **18083, 1883, 8883, 8081, 8083, 8084** serán utilizados.
+Tras esto, procederemos a generar los NodePorts del proyecto, aplicando el siguiente comando a todos los puertos:
+```
+KUBECTL EXPOSE DEPLOYMENT EMQX-DEPLOYMENT --NAME EMQX-DASHBOARD --PORT=<port> --TARGET-PORT=<same port> --TYPE NODEPORT
+```
+
+Y con esto, le aplicamos el Port-forward para vincular a nuestra PC los puertos a utilizar, con el comando:
+```
+KUBECTL PORT-FORWARD EMQX-DASHBOARD <port>:<same port>
+
+```
+
+
+
 Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
 
 1. Entrar a la página emqx.com/en
