@@ -7,7 +7,7 @@ En la carpeta *IoT-NODEMCU8266-Sensor* se encuentran los archivos utilizados par
 
 En la siguiente imagen se muestra la arquitectura propuesta para que el sistema muestre el uso de los sensores y el led mediante el broker EMQX.
 
-<img src="./IoT-NODEMCU8266-Sensor/Arquitectura.png">
+<img src="./Arquitectura.png">
 
 ## Despliegue del Proyecto
 
@@ -56,7 +56,7 @@ Las conexiones que fueron utilizadas de acuerdo a al diagrama de la arquitectura
 
 Además, n el siguiente link se explica a mayor detalle cómo se realizó este apartado del proyecto además de la demostración del funcionamiento del mismo: https://drive.google.com/file/d/1ddA4rBIDVZXG3Wm8QdmoKxumuqb20x7B/view?usp=sharing
 
-<img src="./IoT-NODEMCU8266-Sensor/EMQX-Broker.png">
+<img src="./EMQX-Broker.png">
 
 Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
 
@@ -84,4 +84,4 @@ De esta manera, si el mensaje ha sido enviado correctamente, el led de la placa 
 
 En el broker, se mostrará la información que se obtiene de los resultados del sensor:
 
-<img src="./IoT-NODEMCU8266-Sensor/Conexiones.png">
+<img src="./Conexiones.png">
