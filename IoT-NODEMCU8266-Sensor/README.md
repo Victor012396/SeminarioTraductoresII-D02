@@ -43,6 +43,7 @@ Una vez que instaladas y obtenidas las anteriores herramientas, primeramente se 
 4. Dar click en Ok
 
 Ya con la libreria descargada, conectamos la NODEMCU8266 a uno de los puertos de nuestra máquina, conectando nuestra placa con el IDE de la siguiente forma:
+
 5. Ir a *'Herramientas>Placa:Arduino/Genuino Uno>Gestor de tarjetas'*
 6. En el campo de busqueda poner 'esp8266' y al encontrarlo, instalar dicha librería
 7. Cerrar el Gestor de tarjetas y abrirlo nuevamente
