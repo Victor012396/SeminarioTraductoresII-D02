@@ -1,17 +1,20 @@
-# Proyecto IoT NODEMCU8266 Sensor
+# Proyecto IoT NODEMCU8266 Sensor 💻
 
 En este apartado se muestra cómo se desarrolla el despliegue de la implementación del Proyecto del Internet son un Sensor, el cuál conecta una placa NODEMCU8266 con un broker, utilizando las tecnologías de Docker, K8s, K3S, K3D y Rancher.
 En la carpeta *IoT-NODEMCU8266-Sensor* se encuentran los archivos utilizados para el desarrollo, donde en el archivo 'Proyecto-IoT' se puede observar más información acerca del mismo.
 
-## Arquitectura del Proyecto
+## Arquitectura del Proyecto 📐
 
 En la siguiente imagen se muestra la arquitectura propuesta para que el sistema muestre el uso de los sensores y el led mediante el broker EMQX.
 
 <img src="./Arquitectura.png">
 
-## Despliegue del Proyecto
+## Despliegue del Proyecto ⚙
+El despliegue del proyecto se divide en dos:
+*Placa NodeMCU8266
+*Broker EMQX
 
-### Instalaciones para el despliegue
+### Instalaciones para el despliegue 🧩
 
 Para el despliegue del proyecto se debe de tener como herramientas:
 * Una placa NODEMUC8266
@@ -30,7 +33,8 @@ Además de algunas otras las cuales se mencionan sus comandos de instalación en
 
 ### Desarrollo del Despliegue
 
-Una vez que instaladas y obtenidas las anteriores herramientas, primeramente se tiene que abrir el IDE de Arduino para cargar el archivo 'NODEMCU2'. En este caso, arduino solicitará hacer la creación de una carpeta, a lo cuál le daremos permiso. Una vez con el código dentro de Arduino, se debe de instalar la libreria que permite el uso de la placa NODEMCU8366, para lo cuál, se sugieren los siguientes pasos:
+#### Placa NodeMCU8266
+Una vez que instaladas y obtenidas las anteriores herramientas, primeramente se tiene que abrir el IDE de Arduino para cargar el archivo 'NODEMCU2'. En este caso, ArduinoIDLE solicitará hacer la creación de una carpeta, a lo cuál le daremos permiso. Una vez con el código dentro de Arduino, se debe de instalar la libreria que permite el uso de la placa NODEMCU8366, para lo cuál, se sugieren los siguientes pasos:
 
 1. Primeramente ir al repositorio oficial del ESP8266: https://github.com/esp8266/arduino 
 2. Ahi se encuentra el link oficial que le dice a Arduino qué descargar para el uso de NODEMCU8366: https://arduino.esp8266.com/stable/package_esp8266com_index.json
@@ -49,14 +53,16 @@ Pd. También existe la ESP8285 (Es la 12)
 10. En caso de no poder, orientarse mediante el siguiente url de Youtube, link video: https://www.youtube.com/watch?v=0g7sazWXfEI
 
 De esta manera, una vez seleccionada la placa, procedemos a, dentro del código, poner nuestra red de internet a la cuál nos conectaremos, junto con su contraseña. Así, ya podemos compilar el programa para cargarlo a la placa, de esta forma, comenzará a buscar la señal del internet previamente configurado, y en la pantalla de salida del IDE, esperaremos hasta observar el mensaje de que 'Se ha conectado al internet'. 
-El siguiente paso es opcional, el cuál consiste en decidir si dejar la placa conectada a la computadora o conectar la placa a un PowerRank (cuando se conecta a este último, se demuestra que la placa puede seguir utilizando el programa aún cuando ya no esta conectado a nuestro equipo, utilizando su modulo ESP8266 que contiene el dispositivo WiFi.
+El siguiente paso es opcional, el cuál consiste en decidir si dejar la placa conectada a la computadora o conectar la placa a un PowerBank (cuando se conecta a este último, se demuestra que la placa puede seguir utilizando el programa aún cuando ya no esta conectado a nuestro equipo, utilizando su modulo ESP8266 que contiene el dispositivo WiFi.
 
 Las conexiones que fueron utilizadas de acuerdo a al diagrama de la arquitectura se muestran en la siguiente imagen:
 
 
-Además, n el siguiente link se explica a mayor detalle cómo se realizó este apartado del proyecto además de la demostración del funcionamiento del mismo: https://drive.google.com/file/d/1ddA4rBIDVZXG3Wm8QdmoKxumuqb20x7B/view?usp=sharing
+Además, en el siguiente link se explica a mayor detalle cómo se realizó este apartado del proyecto además de la demostración del funcionamiento del mismo: https://drive.google.com/file/d/1ddA4rBIDVZXG3Wm8QdmoKxumuqb20x7B/view?usp=sharing
 
 <img src="./EMQX-Broker.png">
+
+#### Broker EMQX
 
 Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
 
