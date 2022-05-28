@@ -112,7 +112,13 @@ Y con esto, le aplicamos el Port-forward para vincular a nuestra PC los puertos 
 KUBECTL PORT-FORWARD EMQX-DASHBOARD <port>:<same port>
 
 ```
+## Uso del Broker EMQX
+Accedemos a nuestro Broker por medio del localhost del equipo en el que se encuentre instalado, en el socket **18083**, e iniciamos sesión con un usuario default:
+  **Usuario:** admin
+  
+  **Password:** public
 
+Suponiendo que las placas NodeMCU8266 están ya conectadas y registradas como clientes dentro del broker, en la barra lateral izquierda del Dashboard, accedemos a **"Tools>Websocket"** 
 
 
 Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
