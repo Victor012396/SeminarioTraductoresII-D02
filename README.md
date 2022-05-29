@@ -1,6 +1,6 @@
 # SeminarioTraductoresII-D02
-Portafolio de Evidencias de Victor Manuel Velasco Hernández
-Código: 265988791
+Portafolio de Evidencias de **Victor Manuel Velasco Hernández**
+- Código: 265988791
 
 ### Mini Análizador Léxico
 
