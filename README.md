@@ -186,31 +186,21 @@ Accedemos a nuestro Broker por medio del localhost del equipo en el que se encue
   
   **Password:** public
 
-Suponiendo que las placas NodeMCU8266 están ya conectadas y registradas como clientes dentro del broker, en la barra lateral izquierda del Dashboard, accedemos a **"Tools>Websocket"** 
-
-
-Después, el siguiente paso es dirigirnos al Broker EMQX de la siguiente manera:
-
-1. Entrar a la página emqx.com/en
-2. Dirigirse al apartado gratis y publico, con este link:
-https://www.emqx.com/en/mqtt/public-mqtt5-broker o buscar la opción 'Publick mqtt5 broker'
-3. Ir y dar click al botón de 'Learn more...' en el apartado de Online MQTT Client
-4. Dar click en el botón de 'Visit MQTT WebSocket Toolkit'
-5. Click en New conection
-6. Crear un client
-
-7. En el apartado de 'Tools' dar click en 'Websocket' y hacer las siguientes configuraciones:
+Suponiendo que las placas NodeMCU8266 están ya conectadas y registradas como clientes dentro del broker, en la barra lateral izquierda del Dashboard, accedemos a **"Tools>Websocket"**, en este apartado generaremos un clientID, en el cuál, le asignaremos nombre y pondremos los datos del usuario con el que se acceso, a continuación un ejemplo:
+```
    1. Name: ESP8266
    2. Client ID: esp8266-client
    3. Username: admin
    4. Password: public
-8. Dar click en el botón 'Connect' y observar que la placa marque como Connected
+```
+Se dara click en el botón 'Connect' y observar que la placa marque como Connected.
 
-9. Por último, en 'Messsages', configurar:
+Tras haber creado el usuario, se procede a generar una suscripción en el tópico **"esp8266/photo"** y **"esp8266/photo2"**, y por ultimo se emitirá un mensaje **"1"** para prender los led, al tópico **"esp8266/test"**, a continuación un ejemplo:
+```
    1. Topic: esp8266/test
    2. Messages: 1 (para encender) o 0 (para apagar)
    3. Dar click en botón para enviar y vemos si se envió el mensaje
-
+```
 De esta manera, si el mensaje ha sido enviado correctamente, el led de la placa NODEMCU8266 prenderá o se apagará, según reciba el mensaje.
 
 En el broker, se mostrará la información que se obtiene de los resultados del sensor:
