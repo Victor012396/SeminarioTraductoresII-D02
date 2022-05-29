@@ -62,7 +62,7 @@ En la carpeta *IoT-NODEMCU8266-Sensor* se encuentran los archivos utilizados par
 
 En la siguiente imagen se muestra la arquitectura propuesta para que el sistema muestre el uso de los sensores y el led mediante el broker EMQX.
 
-<img src="./IoT-NODEMUC8266-Sensor/Arquitectura.png">
+<img src="./IoT-NODEMCU8266-Sensor/Arquitectura.png">
 
 ## Despliegue del Proyecto ⚙
 El despliegue del proyecto se divide en dos:
