@@ -59,7 +59,7 @@ return a+b;
 ```
 Donde el Árbol Sintáctico se muestra a continuación:
 
-<img src="./Arbol.png">
+<img src="./Arbol.jpeg">
 
 
 # Proyecto IoT NODEMCU8266 Sensor
