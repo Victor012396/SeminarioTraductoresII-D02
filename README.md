@@ -44,7 +44,7 @@ En esta cuarta etapa se realiza un cambio que permite identificar los tokens med
 
 Podemos observar cómo se realiza el análisis de la sintáctica de la candena, mostrando su correcto funcionamiento para el análisis de los ejercicios 1 y 2 hasta llegar a su aceptación.
 
-### Análizador Sintáctico Gramática
+
 
 
 # Proyecto IoT NODEMCU8266 Sensor
@@ -62,7 +62,7 @@ En la carpeta *IoT-NODEMCU8266-Sensor* se encuentran los archivos utilizados par
 
 En la siguiente imagen se muestra la arquitectura propuesta para que el sistema muestre el uso de los sensores y el led mediante el broker EMQX.
 
-<img src="./Arquitectura.png">
+<img src="./IoT-NODEMUC8266-Sensor/Arquitectura.png">
 
 ## Despliegue del Proyecto ⚙
 El despliegue del proyecto se divide en dos:
@@ -127,7 +127,7 @@ Las conexiones que fueron utilizadas de acuerdo a al diagrama de la arquitectura
 
 Además, en el siguiente link se explica a mayor detalle cómo se realizó este apartado del proyecto además de la demostración del funcionamiento del mismo: https://drive.google.com/file/d/1ddA4rBIDVZXG3Wm8QdmoKxumuqb20x7B/view?usp=sharing
 
-<img src="./EMQX-Broker.png">
+<img src="./IoT-NODEMCU8266-Sensor/EMQX-Broker.png">
 
 #### Broker EMQX 📦
 Para poder implementar el Broker, es necesario instalar K3D y K3S, para poder comenzar con el cluster, para lo cuál se usaron los siguientes comandos(esta implementación fue en Windows por medio de PowerShell), recuerda que se debe tener instalado Chocolatey: 
@@ -201,5 +201,5 @@ De esta manera, si el mensaje ha sido enviado correctamente, el led de la placa 
 
 En el broker, se mostrará la información que se obtiene de los resultados del sensor:
 
-<img src="./Conexiones.png">
+<img src="./IoT-NODEMCU8266-Sensor/Conexiones.png">
 
