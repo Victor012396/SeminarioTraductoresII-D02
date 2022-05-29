@@ -45,6 +45,20 @@ En esta cuarta etapa se realiza un cambio que permite identificar los tokens med
 Podemos observar cómo se realiza el análisis de la sintáctica de la candena, mostrando su correcto funcionamiento para el análisis de los ejercicios 1 y 2 hasta llegar a su aceptación.
 
 
+### Análizador Sintáctico Gramática
+
+La sintaxis se refiere a cómo se ve un programa, a su representación textual o estructura; y es posible obtener una definición matemática precisa de la misma. En el desarrollo del programa, mediante la grámatica implementada en base a la tabla Lr, será posible revisar que la sintaxis para funciones, declaraciones de variables, operaciones y entre otros sea correcta, mediante el uso de una gramática libre de contexto.
+La pila utilizada para esta etapa permite el uso de nodos, de manera que al momento de hacer reducciones, la información se va almacenando para poder imprimirla en el Árbol Sintáctico.
+
+Para el análizis de esta entrega, se hizo uso de la entrada
+```
+int a;
+int suma(int a, int b){
+return a+b;
+}
+```
+Donde el Árbol Sintáctico se muestra a continuación:
+
 
 
 # Proyecto IoT NODEMCU8266 Sensor
