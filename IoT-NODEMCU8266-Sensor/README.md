@@ -1,7 +1,7 @@
 # ![Proyecto IOT NodeMCU8266](https://user-images.githubusercontent.com/40220378/170843779-1dfd5265-59ee-4319-850b-68073664d2c9.png)
 
 
-En este apartado se muestra cómo se desarrolla el despliegue de la implementación del Proyecto del Internet son un Sensor, el cuál conecta una placa NODEMCU8266 con un broker, utilizando las tecnologías de Docker, K8s, K3S, K3D y Rancher.
+En este apartado se muestra cómo se desarrolla el despliegue de la implementación del Proyecto del Internet de las cosas con un Sensor, el cuál conecta una placa NODEMCU8266 con un broker, utilizando las tecnologías de Docker, K8s, K3S, K3D y Rancher.
 En la carpeta *IoT-NODEMCU8266-Sensor* se encuentran los archivos utilizados para el desarrollo, donde en el archivo 'Proyecto-IoT' se puede observar más información acerca del mismo.
 
 ## Arquitectura del Proyecto 📐
@@ -23,7 +23,7 @@ Para el despliegue del proyecto se debe de tener como herramientas:
 * 2 leds
 * 2 fotoresistencias
 * 1 resistencia
-* Para observar mejor el funcionamiento del módulo de internet, se recomienda una PowerRank
+* Para observar mejor el funcionamiento del módulo de internet, se recomienda una PowerBank
 
 Y previamente instalado:
 * Arduino IDE
@@ -35,7 +35,7 @@ Además de algunas otras las cuales se mencionan sus comandos de instalación en
 ### Desarrollo del Despliegue
 
 #### Placa NodeMCU8266 👨🏻‍💻
-Una vez que instaladas y obtenidas las anteriores herramientas, primeramente se tiene que abrir el IDE de Arduino para cargar el archivo 'NODEMCU2'. En este caso, ArduinoIDLE solicitará hacer la creación de una carpeta, a lo cuál le daremos permiso. Una vez con el código dentro de Arduino, se debe de instalar la libreria que permite el uso de la placa NODEMCU8366, para lo cuál, se sugieren los siguientes pasos:
+Una vez que instaladas y obtenidas las anteriores herramientas, primeramente se tiene que abrir el IDE de Arduino para cargar el archivo 'NODEMCU2'. En este caso, ArduinoIDLE solicitará hacer la creación de una carpeta, a lo cuál le daremos permiso. Una vez con el código dentro de Arduino, se debe de instalar la libreria que permite el uso de la placa NODEMCU8266, para lo cuál, se sugieren los siguientes pasos:
 
 **1.** Primeramente ir al repositorio oficial del ESP8266: https://github.com/esp8266/arduino 
 
@@ -63,7 +63,7 @@ Pd. También existe la ESP8285 (Es la 12)
    
    **Upload Speed:** Es el nivel de carga del programa, esto depende del valor y carga del puerto y del usb
     
-**10.** En caso de no poder, orientarse mediante el siguiente url de Youtube, link video: https://www.youtube.com/watch?v=0g7sazWXfEI
+**10.** En caso de buscar más información para este proceso, orientarse mediante el siguiente url de Youtube, link video: https://www.youtube.com/watch?v=0g7sazWXfEI
 
 De esta manera, una vez seleccionada la placa, procedemos a, dentro del código, poner nuestra red de internet a la cuál nos conectaremos, junto con su contraseña. Así, ya podemos compilar el programa para cargarlo a la placa, de esta forma, comenzará a buscar la señal del internet previamente configurado, y en la pantalla de salida del IDE, esperaremos hasta observar el mensaje de que 'Se ha conectado al internet'. 
 El siguiente paso es opcional, el cuál consiste en decidir si dejar la placa conectada a la computadora o conectar la placa a un PowerBank (cuando se conecta a este último, se demuestra que la placa puede seguir utilizando el programa aún cuando ya no esta conectado a nuestro equipo, utilizando su modulo ESP8266 que contiene el dispositivo WiFi.
@@ -91,7 +91,7 @@ K3D CLUSTER CREATE --API-PORT 6448 -P
 "8081:8081" -P "8083:8083" -P "8084:8084" IOT
 ```
 
-Para configurar, la variable de entorno del clúster, se introducira el siguiente comando(exclusivo de PowerShell):
+Para configurar, la variable de entorno del clúster, se introducirá el siguiente comando(exclusivo de PowerShell):
 ```
 K3D KUBECONFIG GET IoT > $ENV:KUBECONFIG_FILE
 $ENV:KUBECONFIG=($ENV:KUBECONFIG_FILE)
